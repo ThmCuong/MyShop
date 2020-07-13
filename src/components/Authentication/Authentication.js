@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 export default class Authentication extends Component {
+  goBackToMain() {
+    this.props.navigation.pop();
+  }
   render() {
     return (
       <View style={{flex: 1, backgroundColor: 'green'}}>
-        <Text>CUong dz</Text>
-        <Button
-          title=" Go to OrderHistory"
-          onPress={() => {
-            this.props.navigation.navigate('OrderHistory');
-          }}
-        />
+        <Text>Authentication Component</Text>
+        <TouchableOpacity onPress={() => this.goBackToMain()}>
+          <Text>Go back to main</Text>
+        </TouchableOpacity>
       </View>
     );
   }
