@@ -7,6 +7,7 @@ import Home from './Home/Home';
 import Cart from './Cart/Cart';
 import Contact from './Contact/Contact';
 import Search from './Search/Search';
+import Header from './Header';
 
 const Tab = createBottomTabNavigator();
 const {height} = Dimensions.get('window');
@@ -25,11 +26,7 @@ class Shop extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <View style={{height: height / 8}}>
-          <TouchableOpacity onPress={() => this.openMenu()}>
-            <Text>Open Menu</Text>
-          </TouchableOpacity>
-        </View>
+        <Header onOpen={this.openMenu.bind(this)} />
         <Tab.Navigator
           tabBarOptions={{
             activeTintColor: 'tomato',
